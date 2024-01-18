@@ -1,4 +1,7 @@
 package dao;
 
-public interface CrudDao extends SuperDao {
+import java.sql.SQLException;
+
+public interface CrudDao<T> extends SuperDao {
+    public T search(String search) throws SQLException;
 }

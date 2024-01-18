@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="Day 2">
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/controller/SignUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/resources/view/signupForm.fxml" afterDir="false" />
+    <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="SignUo">
+      <change afterPath="$PROJECT_DIR$/Login/src/main/java/dao/SQLUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Login/src/main/java/dto/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Login/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/ClDController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/clientDash.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/custom/LoginBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/bo/custom/LoginBo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/custom/impl/LoginBoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/bo/custom/impl/LoginBoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/src/main/java/controller/LoginformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/controller/LoginformController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/view/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/resources/view/loginForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/CrudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/DaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/custom/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/custom/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/custom/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/custom/impl/UserDaoImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +31,8 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="package-info" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -59,14 +66,22 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+    "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat" />
+      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Login" />
+      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main\java" />
+      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main" />
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Login\src\main" />
-      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main\resources\view" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -121,13 +136,22 @@
       <option name="project" value="LOCAL" />
       <updated>1705554081955</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="SignUo">
+      <option name="closed" value="true" />
+      <created>1705556857336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705556857336</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Second Commit" />
     <MESSAGE value="Day 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 2" />
+    <MESSAGE value="SignUo" />
+    <option name="LAST_COMMIT_MESSAGE" value="SignUo" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package dao.custom;
 
 import dao.CrudDao;
+import dto.UserDto;
 
-public interface UserDao extends CrudDao {
+public interface UserDao extends CrudDao<UserDto> {
 }

@@ -11,9 +11,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LoginformController {
 
@@ -30,8 +30,20 @@ public class LoginformController {
         String username = txtUsername.getText();
         String password = txtPassWord.getText();
 
-        if(loginBo.checkValidity(username,password)){
-            //dosomething
+        try {
+//            boolean b = loginBo.checkValidity(username, password);
+            if(true){
+                Stage cur = (Stage) root.getScene().getWindow();
+                cur.close();
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(""));
+                Object load = loader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene((Parent) load));
+                stage.show();
+            }
+        } catch (IOException e) {
+           e.printStackTrace();
         }
     }
 
