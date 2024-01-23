@@ -13,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class LoginformController {
 
@@ -33,10 +32,8 @@ public class LoginformController {
         try {
 //            boolean b = loginBo.checkValidity(username, password);
             if(true){
-                Stage cur = (Stage) root.getScene().getWindow();
-                cur.close();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource(""));
+                loader.setLocation(getClass().getResource("/view/dashBoard.fxml"));
                 Object load = loader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene((Parent) load));

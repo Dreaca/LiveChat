@@ -12,6 +12,7 @@
         <module>Server</module>
         <module>Client</module>
         <module>Login</module>
+        <module>Client</module>
     </modules>
 
     <properties>

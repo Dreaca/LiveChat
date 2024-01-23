@@ -5,20 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="SignUo">
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/dao/SQLUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/src/main/java/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/controller/DashBoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/view/dashBoard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ServerLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/ClDController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/clientDash.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/custom/LoginBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/bo/custom/LoginBo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/custom/impl/LoginBoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/bo/custom/impl/LoginBoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/controller/LoginformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/controller/LoginformController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/CrudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/DaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/custom/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/custom/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/custom/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/dao/custom/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/BoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/bo/BoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/SuperBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/bo/SuperBo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/custom/LoginBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/bo/custom/LoginBo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/bo/custom/impl/LoginBoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/bo/custom/impl/LoginBoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/controller/LoginformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/LoginformController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/CrudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/DaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/SQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/SQLUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/SuperDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/SuperDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/custom/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/custom/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dao/custom/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/custom/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/db/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/db/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/db/livechat.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/db/livechat.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/view/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/loginForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/resources/view/signupForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/signupForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/resources/view/server.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/resources/view/server.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +43,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
-        <option value="Class" />
         <option value="package-info" />
         <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,29 +67,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "D:/JavaFX/javafx-sdk-20.0.2/lib",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaFX/javafx-sdk-20.0.2/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main\resources" />
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat" />
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Login" />
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main\java" />
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main" />
-      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Login\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -83,17 +100,33 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Launcher" />
-      <module name="Login" />
+      <module name="Client" />
       <option name="VM_PARAMETERS" value="--module-path &quot;D:\JavaFX\javafx-sdk-20.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerLauncher" />
+      <module name="Server" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\JavaFX\javafx-sdk-20.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Launcher" />
+      <item itemvalue="Application.ServerLauncher" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServerLauncher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -144,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705556857336</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="SignUo">
+      <option name="closed" value="true" />
+      <created>1705564072981</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705564072981</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
