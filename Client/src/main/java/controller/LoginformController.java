@@ -27,7 +27,6 @@ public class LoginformController {
     @FXML
     void loginOnAction(ActionEvent event) {
         String username = txtUsername.getText();
-        String password = txtPassWord.getText();
 
         try {
 //            boolean b = loginBo.checkValidity(username, password);
@@ -42,14 +41,5 @@ public class LoginformController {
         } catch (IOException e) {
            e.printStackTrace();
         }
-    }
-
-    public void signUpOnAction(ActionEvent actionEvent) throws IOException {
-        Stage cur = (Stage) root.getScene().getWindow();
-        cur.close();
-        Object load = FXMLLoader.load(getClass().getResource("/view/signupForm.fxml"));
-        Stage stage = new Stage();
-        stage.setScene(new Scene((Parent) load));
-        stage.show();
     }
 }

@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginformController">
    <children>
-      <TextField fx:id="txtUsername" layoutX="154.0" layoutY="193.0" prefHeight="25.0" prefWidth="306.0" promptText="User name" />
-      <PasswordField fx:id="txtPassWord" layoutX="154.0" layoutY="228.0" prefHeight="25.0" prefWidth="306.0" promptText="Password" />
-      <JFXButton buttonType="RAISED" layoutX="284.0" layoutY="260.0" onAction="#loginOnAction" style="-fx-background-color: lime;" text="Login" />
-      <Label layoutX="254.0" prefHeight="89.0" prefWidth="137.0" text="Login">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Label>
-      <Hyperlink layoutX="401.0" layoutY="319.0" onAction="#signUpOnAction" text="Sign Up" />
+      <AnchorPane layoutX="322.0" layoutY="16.0" prefHeight="367.0" prefWidth="263.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;">
+         <children>
+            <Label layoutX="62.0" layoutY="14.0" prefHeight="89.0" prefWidth="137.0" text="Login">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsername" layoutX="25.0" layoutY="226.0" prefHeight="25.0" prefWidth="217.0" promptText="User name" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="265.0" onAction="#loginOnAction" prefHeight="42.0" prefWidth="41.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 180; -fx-border-radius: 180;" text="Login">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-login-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="116.0" fitWidth="137.0" layoutX="73.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-user-100.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
    </children>
 </AnchorPane>

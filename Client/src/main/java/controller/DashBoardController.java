@@ -3,8 +3,13 @@ package controller;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -22,6 +27,7 @@ public class DashBoardController {
     private Socket socket;
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
+    private Stage emojiBoardStage;
 
     public void initialize() {
         new Thread(() -> {
@@ -32,7 +38,7 @@ public class DashBoardController {
                 String message = "";
                 while (!message.equals("exit")) {
                     message = dataInputStream.readUTF();
-                    updateTextArea("Server: " + message);
+                    updateTextArea(message);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -40,6 +46,24 @@ public class DashBoardController {
                 closeConnection();
             }
         }).start();
+        emojiBoardStage = new Stage();
+        showEmojiBoard();
+    }
+    private void showEmojiBoard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/emojiBoard.fxml"));
+            Object emojiBoard = loader.load();
+
+            EmojiController emojiBoardController = loader.getController();
+            emojiBoardController.setDashBoardController(this);
+
+            Scene emojiBoardScene = new Scene((Parent) emojiBoard);
+            emojiBoardStage.setScene(emojiBoardScene);
+            emojiBoardStage.initModality(Modality.APPLICATION_MODAL);
+            emojiBoardStage.setTitle("Emoji Board");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -82,5 +106,12 @@ public class DashBoardController {
 
     public void sendOnAction(ActionEvent actionEvent) {
         btnSendOnAction(actionEvent);
+    }
+
+    public void openEmojiBoard(ActionEvent event) {
+        emojiBoardStage.showAndWait();
+    }
+    public void setEmoji(String emoji) {
+        txtMessage.setText(emoji);
     }
 }

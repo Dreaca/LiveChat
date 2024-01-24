@@ -37,7 +37,6 @@ public class ServerController {
                     DataInputStream clientInputStream = new DataInputStream(clientSocket.getInputStream());
                     DataOutputStream clientOutputStream = new DataOutputStream(clientSocket.getOutputStream());
 
-                    // Store the client's output stream in the map
                     clientStreams.put(clientSocket, clientOutputStream);
 
                     threadPool.execute(() -> handleClient(clientSocket, clientInputStream));
@@ -56,13 +55,10 @@ public class ServerController {
                 if (message.equals("exit")) {
                     break;
                 }
-
-                // Handle the received message (e.g., process, broadcast, etc.)
-                // For simplicity, let's just echo the message back to the client
                 txtArea.appendText("\nClient: " + message);
 
-                // Echo the message back to the client
-                sendToClient(clientSocket, "Server: " + message);
+                // Broadcast the message to all clients except the sender
+                broadcastMessage(clientSocket, "Client: " + message);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,13 +67,15 @@ public class ServerController {
         }
     }
 
-    private void sendToClient(Socket clientSocket, String message) {
+    private void broadcastMessage(Socket senderSocket, String message) {
         try {
-            // Get the output stream for the specified client from the map
-            DataOutputStream clientOutputStream = clientStreams.get(clientSocket);
-            if (clientOutputStream != null) {
-                clientOutputStream.writeUTF(message);
-                clientOutputStream.flush();
+            for (Socket clientSocket : clientStreams.keySet()) {
+                // Skip the sender, don't send the message back to the client who sent it
+                if (clientSocket != senderSocket) {
+                    DataOutputStream clientOutputStream = clientStreams.get(clientSocket);
+                    clientOutputStream.writeUTF(message);
+                    clientOutputStream.flush();
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -99,18 +97,16 @@ public class ServerController {
             String message = txtMessage.getText();
             txtArea.appendText("\n" + message);
 
-            // Broadcast the message to all connected clients
             for (DataOutputStream clientOutputStream : clientStreams.values()) {
-                clientOutputStream.writeUTF( message);
+                clientOutputStream.writeUTF("Server : "+message);
                 clientOutputStream.flush();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     @FXML
-    void sendTextOnAction(ActionEvent event) {
-        // You can implement additional logic here if needed
+    public  void sendTextOnAction(ActionEvent event){
+        sendOnAction(event);
     }
 }
