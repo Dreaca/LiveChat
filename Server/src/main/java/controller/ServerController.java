@@ -4,10 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
@@ -16,15 +18,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ServerController {
+    public TextField txtMessage;
     private ServerSocket serverSocket;
     private ExecutorService threadPool = Executors.newCachedThreadPool();
     private Map<Socket, DataOutputStream> clientStreams = new ConcurrentHashMap<>();
 
     @FXML
     private TextArea txtArea;
-
-    @FXML
-    private TextField txtMessage;
 
     public void initialize() {
         new Thread(() -> {
@@ -54,11 +54,14 @@ public class ServerController {
                 message = clientInputStream.readUTF();
                 if (message.equals("exit")) {
                     break;
-                }
-                txtArea.appendText("\nClient: " + message);
+                } else if (message.equals("image")) {
 
-                // Broadcast the message to all clients except the sender
-                broadcastMessage(clientSocket, "Client: " + message);
+                } else {
+                    txtArea.appendText("\nClient: " + message);
+
+                    // Broadcast the message to all clients except the sender
+                    broadcastMessage(clientSocket, "Client: " + message);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,7 +93,6 @@ public class ServerController {
             e.printStackTrace();
         }
     }
-
     @FXML
     void sendOnAction(ActionEvent event) {
         try {

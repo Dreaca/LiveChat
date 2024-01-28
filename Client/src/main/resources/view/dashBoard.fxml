@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
    <children>
-      <TextArea fx:id="txtArea" editable="false" layoutX="83.0" layoutY="14.0" prefHeight="330.0" prefWidth="501.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" wrapText="true" />
       <TextField fx:id="txtMessage" layoutX="129.0" layoutY="351.0" onAction="#sendOnAction" prefHeight="25.0" prefWidth="353.0" />
       <JFXButton buttonType="RAISED" layoutX="494.0" layoutY="351.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: lime;" text="send" />
       <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="14.0" onAction="#logoutOnAction" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: red;" text="Logout" />
@@ -22,5 +22,20 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="448.0" layoutY="351.0" onAction="#addImageOnAction">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/album.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <HBox fx:id="hbox" layoutX="71.0" layoutY="14.0" prefHeight="323.0" prefWidth="515.0">
+         <children>
+            <!-- Use VBox as the container for text bubbles -->
+            <VBox fx:id="chatContainer" prefHeight="323.0" prefWidth="530.0" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

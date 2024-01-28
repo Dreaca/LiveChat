@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="multiple clients done">
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/controller/EmojiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/icons8-login-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/icons8-user-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/smile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/view/emojiBoard.fxml" afterDir="false" />
+    <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="Broadcasting and EmojiBoard is set">
+      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/album.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/LoginformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/LoginformController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/dashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/dashBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/loginForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/signupForm.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/emojiBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/emojiBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,22 +46,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/lapcity/Desktop/Academic GDSE67/NetworkProgramming/ChatApp/LiveChat/Client/src/main/resources/img",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lapcity/Desktop/Academic GDSE67/NetworkProgramming/ChatApp/LiveChat/Client/src/main/resources/img&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main\resources\img" />
@@ -180,8 +175,27 @@
       <option name="project" value="LOCAL" />
       <updated>1706026778615</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Broadcasting and EmojiBoard is set">
+      <option name="closed" value="true" />
+      <created>1706102398234</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706102398234</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -189,6 +203,7 @@
     <MESSAGE value="Day 2" />
     <MESSAGE value="SignUo" />
     <MESSAGE value="multiple clients done" />
-    <option name="LAST_COMMIT_MESSAGE" value="multiple clients done" />
+    <MESSAGE value="Broadcasting and EmojiBoard is set" />
+    <option name="LAST_COMMIT_MESSAGE" value="Broadcasting and EmojiBoard is set" />
   </component>
 </project>
