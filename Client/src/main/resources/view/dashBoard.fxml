@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
    <children>
-      <TextField fx:id="txtMessage" layoutX="129.0" layoutY="351.0" onAction="#sendOnAction" prefHeight="25.0" prefWidth="353.0" />
-      <JFXButton buttonType="RAISED" layoutX="494.0" layoutY="351.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: lime;" text="send" />
-      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="14.0" onAction="#logoutOnAction" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: red;" text="Logout" />
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="87.0" layoutY="347.0" onAction="#openEmojiBoard">
+      <TextField fx:id="txtMessage" layoutX="97.0" layoutY="351.0" onAction="#sendOnAction" prefHeight="25.0" prefWidth="353.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font></TextField>
+      <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="450.0" layoutY="343.0" onAction="#btnSendOnAction" prefHeight="41.0" prefWidth="41.0" text="send">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+               <image>
+                  <Image url="@../img/send.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+      <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="341.0" onAction="#logoutOnAction" prefHeight="25.0" prefWidth="49.0" text="Logout">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/power-on.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="55.0" layoutY="347.0" onAction="#openEmojiBoard">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -22,7 +41,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="448.0" layoutY="351.0" onAction="#addImageOnAction">
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="416.0" layoutY="351.0" onAction="#addImageOnAction">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,11 +50,19 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <HBox fx:id="hbox" layoutX="71.0" layoutY="14.0" prefHeight="323.0" prefWidth="515.0">
-         <children>
-            <!-- Use VBox as the container for text bubbles -->
-            <VBox fx:id="chatContainer" prefHeight="323.0" prefWidth="530.0" />
-         </children>
-      </HBox>
+      <ScrollPane fx:id="scrollPane" layoutX="13.0" layoutY="12.0" prefHeight="317.0" prefViewportHeight="285.0" prefViewportWidth="515.0" prefWidth="575.0">
+         <HBox fx:id="hbox" prefHeight="307.0" prefWidth="568.0">
+            <children>
+               <!-- Use VBox as the container for text bubbles -->
+               <VBox fx:id="chatContainer" prefHeight="321.0" prefWidth="570.0" />
+            </children>
+         </HBox>
+      </ScrollPane>
+      <ImageView fitHeight="41.0" fitWidth="91.0" layoutX="517.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/new-removebg-preview.png" />
+         </image>
+      </ImageView>
+
    </children>
 </AnchorPane>

@@ -9,10 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -26,14 +23,15 @@ import javafx.stage.Window;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 import java.nio.file.Files;
 
 public class DashBoardController {
 
     public HBox hbox;
     public VBox chatContainer;
-    @FXML
-    private TextArea txtArea;
+    public ScrollPane scrollPane;
+    public AnchorPane root;
 
     @FXML
     private TextField txtMessage;
@@ -42,32 +40,64 @@ public class DashBoardController {
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
     private Stage emojiBoardStage;
+    private String name;
 
     public void initialize() {
+        Image image = new Image("img/2797258.jpg");
+        ImageView imageView = new ImageView(image);
+        imageView.fitWidthProperty().bind(root.widthProperty());
+        imageView.fitHeightProperty().bind(root.heightProperty());
+
+// Create a new background image object
+        BackgroundImage backgroundImage = new BackgroundImage(
+                image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true) // Set 'cover' to true
+        );
+
+// Set the background image to the root node
+        root.setBackground(new Background(backgroundImage));
+
         new Thread(() -> {
             try {
                 socket = new Socket("localhost", 3000);
                 dataOutputStream = new DataOutputStream(socket.getOutputStream());
                 dataInputStream = new DataInputStream(socket.getInputStream());
-                Object message = "";
-                while (!message.equals("exit")) {
-                    message = dataInputStream.readUTF();
-                    if (message.equals("image")) {
 
+                String message = "";
+
+                while (true) {
+                    try {
+                        message = dataInputStream.readUTF();
+                    } catch (SocketException e) {
+                        if (e.getMessage().equals("Socket closed")) {
+                            break; // Connection reset by client, break out of the loop
+                        } else {
+                            throw e; // Re-throw other SocketExceptions
+                        }
+                    }
+//                    message  = dataInputStream.readUTF();
+                    String[] msg = message.split("&");
+                    String type = msg[0];
+                    String sender = msg[1];
+                    String contain = msg[2];
+
+                    if (type.equals("img")) {
+                       updateTextArea(sender,"sent an Image");
+                        receiveImage(contain);
                     } else {
-                        updateTextArea((String)message);
+                        updateTextArea(sender,contain);
                     };
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-            } finally {
-                closeConnection();
             }
         }).start();
         emojiBoardStage = new Stage();
         showEmojiBoard();
     }
-
     private void showEmojiBoard() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/emojiBoard.fxml"));
@@ -89,38 +119,42 @@ public class DashBoardController {
     void btnSendOnAction(ActionEvent event) {
         try {
             String message = txtMessage.getText();
-            dataOutputStream.writeUTF(message);
+            dataOutputStream.writeUTF("txt&" + this.name + "&" +message);
             dataOutputStream.flush();
             addTextBubble(null, "Me: " + message, true);
+            txtMessage.clear();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    void logoutOnAction(ActionEvent event) {
-        // Add logout functionality
-        closeConnection();
+    public void logoutOnAction(ActionEvent event) {
+        Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationDialog.setTitle("Logout Confirmation");
+        confirmationDialog.setHeaderText(null);
+        confirmationDialog.setContentText("Are you sure you want to logout?");
+        confirmationDialog.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
+
+        confirmationDialog.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                LoginformController.activeUsers.remove(this.name); // Assuming you have a list of active users
+                try {
+                    dataOutputStream.writeUTF("exit&"+this.name+"&"+"logging out"); // Send "exit" message to the server
+                    dataOutputStream.flush(); // Ensure the message is sent immediately
+                    dataOutputStream.close();
+                    dataInputStream.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Stage stage = (Stage) root.getScene().getWindow();
+                stage.close(); // Close the current stage
+            }
+        });
     }
 
-    private void closeConnection() {
-        try {
-            if (dataOutputStream != null) {
-                dataOutputStream.close();
-            }
-            if (dataInputStream != null) {
-                dataInputStream.close();
-            }
-            if (socket != null && !socket.isClosed()) {
-                socket.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void updateTextArea(String message) {
-        Platform.runLater(() -> addTextBubble(null, message, false));
+    private void updateTextArea(String sender,String message) {
+        Platform.runLater(() -> addTextBubble(null,(sender+":"+message) , false));
     }
 
     public void sendOnAction(ActionEvent actionEvent) {
@@ -132,7 +166,9 @@ public class DashBoardController {
     }
 
     public void setEmoji(String emoji) {
-        txtMessage.setText(emoji);
+        String existingText = txtMessage.getText();
+        String newText = existingText + emoji;
+        txtMessage.setText(newText);
     }
 
     public void addImageOnAction(ActionEvent event) {
@@ -143,10 +179,27 @@ public class DashBoardController {
         );
         Window window = ((Stage) ((Button) event.getSource()).getScene().getWindow());
         File selectedFile = fileChooser.showOpenDialog(window);
+        String absolutePath = selectedFile.toURI().toString();
 
         if (selectedFile != null) {
-
+            sendImage(absolutePath);
         }
+    }
+    private void sendImage(String absolutePath) {
+        Image image = new Image(absolutePath);
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(200);
+        imageView.setFitWidth(200);
+
+        addTextBubble(imageView, this.name , true);
+
+        try {
+            dataOutputStream.writeUTF("img&" + this.name + "&" + absolutePath);
+            dataOutputStream.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
     private void addTextBubble(Node content, String message, boolean isSentByMe) {
         Label messageLabel = new Label(message);
@@ -171,6 +224,23 @@ public class DashBoardController {
         textBubble.setAlignment(isSentByMe ? Pos.CENTER_RIGHT : Pos.CENTER_LEFT);
 
         chatContainer.getChildren().add(textBubble);
+
+        // Scroll down to display the new message
+        chatContainer.layout(); // Ensure the layout is updated before scrolling
+        scrollPane.setVvalue(1); // Set the vertical scroll position to the bottom
     }
 
+    private void receiveImage(String path) {
+        Image image = new Image(path);
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(200);
+        imageView.setFitWidth(200);
+        Platform.runLater(() -> {
+            addTextBubble(imageView, "sent image", false);
+        });
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
 }

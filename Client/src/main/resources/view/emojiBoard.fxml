@@ -9,11 +9,11 @@
       <HBox prefHeight="38.0" prefWidth="338.0">
          <children>
             <JFXButton onAction="#selectEmoji" text="😊" />
-            <JFXButton text="😂" />
-            <JFXButton text="🤣" />
-            <JFXButton text="❤️" />
-            <JFXButton text="😍" />
-            <JFXButton text="😒" />
+            <JFXButton text="😂" onAction="#selectEmoji" />
+            <JFXButton text="🤣" onAction="#selectEmoji"/>
+            <JFXButton text="❤️" onAction="#selectEmoji"/>
+            <JFXButton text="😍" onAction="#selectEmoji"/>
+            <JFXButton text="😒" onAction="#selectEmoji"/>
          </children>
       </HBox>
       <HBox layoutY="38.0" prefHeight="38.0" prefWidth="338.0" />

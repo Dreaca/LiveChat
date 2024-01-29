@@ -5,5 +5,5 @@ import bo.SuperBo;
 import java.sql.SQLException;
 
 public interface LoginBo extends SuperBo {
-    boolean checkValidity(String username, String password) throws SQLException;
+    boolean checkValidity(String username) throws SQLException;
 }

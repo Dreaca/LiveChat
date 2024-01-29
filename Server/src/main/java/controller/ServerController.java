@@ -4,15 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -51,16 +51,29 @@ public class ServerController {
         try {
             String message;
             while (true) {
-                message = clientInputStream.readUTF();
-                if (message.equals("exit")) {
+                try {
+                    message = clientInputStream.readUTF();
+                } catch (SocketException e) {
+                    if (e.getMessage().equals("Connection reset")) {
+                        break;
+                    } else {
+                        throw e;
+                    }
+                }
+                String[] msg = message.split("&");
+                String type = msg[0];
+                String sender = msg[1];
+                String contain = msg[2];
+
+                if (type.equals("exit")) {
+                    // Close the connection for this client
+                    closeConnection(clientSocket);
                     break;
-                } else if (message.equals("image")) {
-
+                } else if (type.equals("img")) {
+                    receiveImage(clientSocket, sender, contain);
                 } else {
-                    txtArea.appendText("\nClient: " + message);
-
-                    // Broadcast the message to all clients except the sender
-                    broadcastMessage(clientSocket, "Client: " + message);
+                    txtArea.appendText("\n" + sender + ":" + contain);
+                    broadcastMessage(clientSocket, message);
                 }
             }
         } catch (IOException e) {
@@ -111,4 +124,13 @@ public class ServerController {
     public  void sendTextOnAction(ActionEvent event){
         sendOnAction(event);
     }
+    private void receiveImage(Socket clientSocket,String sender,String absolutePath) {
+        if (Objects.equals(sender, "")){
+            sender = "someone";
+        }
+            String message = ("img&" + sender + "&" + absolutePath);
+            broadcastMessage(clientSocket, message);
+            System.out.println(message);
+    }
+
 }

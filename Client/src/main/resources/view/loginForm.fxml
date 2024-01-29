@@ -11,15 +11,15 @@
 
 <AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginformController">
    <children>
-      <AnchorPane layoutX="322.0" layoutY="16.0" prefHeight="367.0" prefWidth="263.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;">
+      <AnchorPane fx:id="logPanel" layoutX="194.0" layoutY="88.0" prefHeight="289.0" prefWidth="225.0">
          <children>
-            <Label layoutX="62.0" layoutY="14.0" prefHeight="89.0" prefWidth="137.0" text="Login">
+            <Label layoutX="54.0" prefHeight="63.0" prefWidth="137.0" text="Login">
                <font>
                   <Font size="48.0" />
                </font>
             </Label>
-            <TextField fx:id="txtUsername" layoutX="25.0" layoutY="226.0" prefHeight="25.0" prefWidth="217.0" promptText="User name" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
-            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="265.0" onAction="#loginOnAction" prefHeight="42.0" prefWidth="41.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 180; -fx-border-radius: 180;" text="Login">
+            <TextField fx:id="txtUsername" layoutX="25.0" layoutY="197.0" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="92.0" layoutY="233.0" onAction="#loginOnAction" prefHeight="42.0" prefWidth="41.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 180; -fx-border-radius: 180;" text="Login">
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -28,7 +28,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <ImageView fitHeight="116.0" fitWidth="137.0" layoutX="73.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="116.0" fitWidth="137.0" layoutX="53.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/icons8-user-100.png" />
                </image>
@@ -38,5 +38,15 @@
             <DropShadow />
          </effect>
       </AnchorPane>
+      <Label layoutX="187.0" layoutY="14.0" text="Welcome to" textFill="#2f2e2e">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="99.0" fitWidth="164.0" layoutX="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/new-removebg-preview.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -13,6 +13,7 @@ public class Launcher extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/loginForm.fxml"));
         Object load = loader.load();
         stage.setScene(new Scene((Parent) load));
+        stage.setResizable(false);
         stage.show();
     }
 }
