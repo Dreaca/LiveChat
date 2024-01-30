@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="Logout function done">
-      <change afterPath="$PROJECT_DIR$/Server/src/main/resources/view/img/power-on.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/BoFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/SuperBo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/custom/LoginBo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/custom/impl/LoginBoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/LoginformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/LoginformController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/CrudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/DaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/SQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/SQLUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/SuperDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/SuperDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/custom/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/custom/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/custom/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/custom/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/db/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/db/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/emojiBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/emojiBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/loginForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/resources/view/server.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/resources/view/server.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706522858985</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Logout function done">
+      <option name="closed" value="true" />
+      <created>1706593463995</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706593463995</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

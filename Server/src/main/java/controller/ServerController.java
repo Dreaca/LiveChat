@@ -164,6 +164,16 @@ public class ServerController {
     }
 
     public void addClientOnAction(ActionEvent event) {
+        String cliName = txtClientName.getText();
+        String pass = txtPassWord.getText();
+        try {
+            if(dao.add(cliName,pass)){
+                txtArea.appendText(cliName+" has added to the system");
+            }
+        } catch (SQLException e) {
+            txtArea.appendText(e.getMessage());
+            txtArea.setWrapText(true);
+        }
     }
 
     public void remClientOnAction(ActionEvent event) {
