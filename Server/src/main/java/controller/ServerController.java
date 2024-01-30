@@ -1,9 +1,13 @@
 package controller;
 
+import dao.DaoFactory;
+import dao.custom.UserDao;
+import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -11,6 +15,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -19,12 +24,16 @@ import java.util.concurrent.Executors;
 
 public class ServerController {
     public TextField txtMessage;
+    public AnchorPane root;
+    public TextField txtClientName;
+    public TextField txtPassWord;
     private ServerSocket serverSocket;
     private ExecutorService threadPool = Executors.newCachedThreadPool();
     private Map<Socket, DataOutputStream> clientStreams = new ConcurrentHashMap<>();
 
     @FXML
     private TextArea txtArea;
+    UserDao dao = (UserDao) DaoFactory.getInstance().getDao(DaoFactory.DAO.USER);
 
     public void initialize() {
         new Thread(() -> {
@@ -66,12 +75,14 @@ public class ServerController {
                 String contain = msg[2];
 
                 if (type.equals("exit")) {
-                    // Close the connection for this client
                     closeConnection(clientSocket);
                     break;
                 } else if (type.equals("img")) {
                     receiveImage(clientSocket, sender, contain);
-                } else {
+                } else if (type.equals("login")){
+                    checkUser(clientSocket,sender, contain);
+                }
+                else {
                     txtArea.appendText("\n" + sender + ":" + contain);
                     broadcastMessage(clientSocket, message);
                 }
@@ -83,10 +94,29 @@ public class ServerController {
         }
     }
 
+    private void checkUser(Socket clientSocket, String sender, String contain) {
+        try {
+            DataOutputStream sendVal = new DataOutputStream(clientSocket.getOutputStream());
+            User search = dao.search(sender);
+            if (search.getPassWord().equals(contain)){
+                sendVal.writeUTF("confirm&"+sender+"&"+"is valid");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     private void broadcastMessage(Socket senderSocket, String message) {
         try {
             for (Socket clientSocket : clientStreams.keySet()) {
-                // Skip the sender, don't send the message back to the client who sent it
                 if (clientSocket != senderSocket) {
                     DataOutputStream clientOutputStream = clientStreams.get(clientSocket);
                     clientOutputStream.writeUTF(message);
@@ -113,7 +143,7 @@ public class ServerController {
             txtArea.appendText("\n" + message);
 
             for (DataOutputStream clientOutputStream : clientStreams.values()) {
-                clientOutputStream.writeUTF("Server : "+message);
+                clientOutputStream.writeUTF("txt&"+"Server&"+(message));
                 clientOutputStream.flush();
             }
         } catch (IOException e) {
@@ -133,4 +163,27 @@ public class ServerController {
             System.out.println(message);
     }
 
+    public void addClientOnAction(ActionEvent event) {
+    }
+
+    public void remClientOnAction(ActionEvent event) {
+
+    }
+
+    public void shutDownOnAction(ActionEvent event) {
+        try {
+            String message = "SERVER SHUTTING DOWN";
+            for (DataOutputStream clientOutputStream : clientStreams.values()) {
+                clientOutputStream.writeUTF("txt&"+"Server&"+(message));
+                clientOutputStream.flush();
+            }
+            for (Socket cliSocket: clientStreams.keySet()) {
+                cliSocket.close();
+            }
+            serverSocket.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

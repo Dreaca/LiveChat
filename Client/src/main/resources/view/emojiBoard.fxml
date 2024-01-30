@@ -4,16 +4,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="258.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmojiController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmojiController">
    <children>
       <HBox prefHeight="38.0" prefWidth="338.0">
          <children>
             <JFXButton onAction="#selectEmoji" text="😊" />
-            <JFXButton text="😂" onAction="#selectEmoji" />
-            <JFXButton text="🤣" onAction="#selectEmoji"/>
-            <JFXButton text="❤️" onAction="#selectEmoji"/>
-            <JFXButton text="😍" onAction="#selectEmoji"/>
-            <JFXButton text="😒" onAction="#selectEmoji"/>
+            <JFXButton onAction="#selectEmoji" text="😂" />
+            <JFXButton onAction="#selectEmoji" text="🤣" />
+            <JFXButton onAction="#selectEmoji" text="❤️" />
+            <JFXButton onAction="#selectEmoji" text="😍" />
+            <JFXButton onAction="#selectEmoji" text="😒" />
+            <JFXButton contentDisplay="CENTER" onAction="#selectEmoji" prefHeight="29.0" prefWidth="30.0" text="😘" />
+            <JFXButton contentDisplay="CENTER" onAction="#selectEmoji" prefHeight="29.0" prefWidth="30.0" text="💕" />
+            <JFXButton contentDisplay="CENTER" onAction="#selectEmoji" prefHeight="29.0" prefWidth="30.0" text="🙌" />
+            <JFXButton contentDisplay="CENTER" onAction="#selectEmoji" prefHeight="29.0" prefWidth="30.0" text="👍" />
+            <JFXButton contentDisplay="CENTER" onAction="#selectEmoji" prefHeight="29.0" prefWidth="30.0" text="😎" />
          </children>
       </HBox>
       <HBox layoutY="38.0" prefHeight="38.0" prefWidth="338.0" />

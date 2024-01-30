@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -18,8 +19,8 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <TextField fx:id="txtUsername" layoutX="25.0" layoutY="197.0" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
-            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="92.0" layoutY="233.0" onAction="#loginOnAction" prefHeight="42.0" prefWidth="41.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 180; -fx-border-radius: 180;" text="Login">
+            <TextField fx:id="txtUsername" layoutX="25.0" layoutY="149.0" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="93.0" layoutY="221.0" onAction="#loginOnAction" prefHeight="42.0" prefWidth="41.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 180; -fx-border-radius: 180;" text="Login">
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -28,11 +29,12 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <ImageView fitHeight="116.0" fitWidth="137.0" layoutX="53.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="55.0" fitWidth="62.0" layoutX="85.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/icons8-user-100.png" />
                </image>
             </ImageView>
+            <PasswordField fx:id="txtPassWord" layoutX="25.0" layoutY="183.0" onAction="#checkOnAction" prefHeight="25.0" prefWidth="177.0" promptText="Password" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
          </children>
          <effect>
             <DropShadow />

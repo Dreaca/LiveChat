@@ -2,7 +2,6 @@ package dao.custom.impl;
 
 import dao.SQLUtil;
 import dao.custom.UserDao;
-import dto.UserDto;
 import entity.User;
 
 import java.sql.ResultSet;
@@ -15,7 +14,20 @@ public class UserDaoImpl implements UserDao {
         resultSet.next();
         return new User(
                 resultSet.getInt("userId"),
-                resultSet.getString("userName")
+                resultSet.getString("userName"),
+                resultSet.getString("passWord")
         );
+    }
+
+    @Override
+    public boolean add(String username, String passs) throws SQLException {
+        int nextID = getNextID();
+        return SQLUtil.execute("INSERT INTO user VALUES()",nextID,username, passs);
+    }
+
+    private int getNextID() throws SQLException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM user");
+        rst.next();
+        return rst.getInt(1)+1;
     }
 }

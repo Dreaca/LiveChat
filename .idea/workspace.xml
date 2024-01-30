@@ -4,33 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="Broadcasting and EmojiBoard is set">
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/2797258.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/3289053.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/Backgrounds-Free-Digital.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/new-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/power-on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/send.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/sl_021821_40890_06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/img/wp7932324-grunge-ps4-aesthetic-wallpapers.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5a9b6943-97f6-4075-b0c8-bfe22590973e" name="Changes" comment="Logout function done">
+      <change afterPath="$PROJECT_DIR$/Server/src/main/resources/view/img/power-on.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/custom/LoginBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/bo/custom/LoginBo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/custom/impl/LoginBoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/bo/custom/impl/LoginBoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/BoFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/SuperBo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/custom/LoginBo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/bo/custom/impl/LoginBoImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/DashBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/LoginformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/LoginformController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/SignUpController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/SQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/SQLUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/custom/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/custom/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/custom/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dao/custom/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/dashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/dashBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/CrudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/DaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/SQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/SQLUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/SuperDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/SuperDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/custom/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/custom/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dao/custom/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dao/custom/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/db/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/db/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/emojiBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/emojiBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/resources/view/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/view/loginForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/controller/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/resources/view/server.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/resources/view/server.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/lapcity/Desktop/Academic GDSE67/NetworkProgramming/ChatApp/backup/LiveChat/Client/src/main/resources/img",
+    "last_opened_file_path": "C:/Users/lapcity/Desktop/Academic GDSE67/NetworkProgramming/ChatApp/backup/LiveChat/Server/src/main/java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -83,6 +78,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\backup\LiveChat\Server\src\main\java" />
+      <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\backup\LiveChat\Server\src\main\resources\view\img" />
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\backup\LiveChat\Client\src\main\resources\img" />
       <recent name="C:\Users\lapcity\Desktop\Academic GDSE67\NetworkProgramming\ChatApp\LiveChat\Client\src\main\resources\img" />
     </key>
@@ -214,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706102398234</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Logout function done">
+      <option name="closed" value="true" />
+      <created>1706522858985</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706522858985</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,6 +240,7 @@
     <MESSAGE value="SignUo" />
     <MESSAGE value="multiple clients done" />
     <MESSAGE value="Broadcasting and EmojiBoard is set" />
-    <option name="LAST_COMMIT_MESSAGE" value="Broadcasting and EmojiBoard is set" />
+    <MESSAGE value="Logout function done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logout function done" />
   </component>
 </project>

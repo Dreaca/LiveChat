@@ -21,10 +21,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.net.Socket;
 import java.net.SocketException;
-import java.nio.file.Files;
 
 public class DashBoardController {
 
@@ -48,7 +50,6 @@ public class DashBoardController {
         imageView.fitWidthProperty().bind(root.widthProperty());
         imageView.fitHeightProperty().bind(root.heightProperty());
 
-// Create a new background image object
         BackgroundImage backgroundImage = new BackgroundImage(
                 image,
                 BackgroundRepeat.NO_REPEAT,
@@ -57,7 +58,6 @@ public class DashBoardController {
                 new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true) // Set 'cover' to true
         );
 
-// Set the background image to the root node
         root.setBackground(new Background(backgroundImage));
 
         new Thread(() -> {
@@ -72,13 +72,12 @@ public class DashBoardController {
                     try {
                         message = dataInputStream.readUTF();
                     } catch (SocketException e) {
-                        if (e.getMessage().equals("Socket closed")) {
-                            break; // Connection reset by client, break out of the loop
+                        if (e.getMessage().equals("Socket closed") || e.getMessage().equals("Connection Reset")) {
+                            break;
                         } else {
-                            throw e; // Re-throw other SocketExceptions
+                            throw e;
                         }
                     }
-//                    message  = dataInputStream.readUTF();
                     String[] msg = message.split("&");
                     String type = msg[0];
                     String sender = msg[1];
@@ -87,7 +86,11 @@ public class DashBoardController {
                     if (type.equals("img")) {
                        updateTextArea(sender,"sent an Image");
                         receiveImage(contain);
-                    } else {
+                    }
+                    else if (type.equals("login")){
+                        updateTextArea("Server"," : A new user has joined the chat. ");
+                    }
+                    else {
                         updateTextArea(sender,contain);
                     };
                 }
@@ -138,17 +141,17 @@ public class DashBoardController {
 
         confirmationDialog.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
-                LoginformController.activeUsers.remove(this.name); // Assuming you have a list of active users
+                LoginformController.activeUsers.remove(this.name);
                 try {
-                    dataOutputStream.writeUTF("exit&"+this.name+"&"+"logging out"); // Send "exit" message to the server
-                    dataOutputStream.flush(); // Ensure the message is sent immediately
+                    dataOutputStream.writeUTF("exit&"+this.name+"&"+"logging out");
+                    dataOutputStream.flush();
                     dataOutputStream.close();
                     dataInputStream.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
                 Stage stage = (Stage) root.getScene().getWindow();
-                stage.close(); // Close the current stage
+                stage.close();
             }
         });
     }
@@ -225,9 +228,8 @@ public class DashBoardController {
 
         chatContainer.getChildren().add(textBubble);
 
-        // Scroll down to display the new message
-        chatContainer.layout(); // Ensure the layout is updated before scrolling
-        scrollPane.setVvalue(1); // Set the vertical scroll position to the bottom
+        chatContainer.layout();
+        scrollPane.setVvalue(1);
     }
 
     private void receiveImage(String path) {
