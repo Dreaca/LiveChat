@@ -74,11 +74,8 @@ public class LoginformController {
                 txtUsername.clear();
                 txtPassWord.clear();
             } else {
-                boolean isValidUser = getExists();
                 txtUsername.clear();
                 txtPassWord.clear();
-
-                if (isValidUser) {
                     FXMLLoader loader = new FXMLLoader();
                     loader.setLocation(getClass().getResource("/view/dashBoard.fxml"));
                     Object load = loader.load();
@@ -92,7 +89,6 @@ public class LoginformController {
 
                     activeUsers.add(username);
                 }
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }

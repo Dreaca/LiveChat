@@ -176,10 +176,6 @@ public class ServerController {
         }
     }
 
-    public void remClientOnAction(ActionEvent event) {
-
-    }
-
     public void shutDownOnAction(ActionEvent event) {
         try {
             String message = "SERVER SHUTTING DOWN";

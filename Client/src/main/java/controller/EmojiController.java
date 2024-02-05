@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 
 public class EmojiController {
 
-    private DashBoardController dashBoardController; // Reference to your main controller
+    private DashBoardController dashBoardController;
 
     @FXML
     private void selectEmoji(ActionEvent event) {
@@ -15,14 +15,11 @@ public class EmojiController {
             String selectedEmoji = selectedButton.getText();
             System.out.println("Selected Emoji: " + selectedEmoji);
 
-            // Call the method in DashBoardController to handle the selected emoji
             if (dashBoardController != null) {
                 dashBoardController.setEmoji(selectedEmoji);
             }
         }
     }
-
-    // Setter method to inject the reference to the main controller
     public void setDashBoardController(DashBoardController dashBoardController) {
         this.dashBoardController = dashBoardController;
     }

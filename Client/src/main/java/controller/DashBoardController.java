@@ -92,7 +92,7 @@ public class DashBoardController {
                     }
                     else {
                         updateTextArea(sender,contain);
-                    };
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();

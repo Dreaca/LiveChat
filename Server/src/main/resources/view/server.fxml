@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServerController">
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServerController">
    <children>
       <TextField fx:id="txtPassWord" layoutX="23.0" layoutY="124.0" prefHeight="25.0" prefWidth="231.0" />
       <TextArea fx:id="txtArea" editable="false" layoutX="290.0" layoutY="56.0" prefHeight="259.0" prefWidth="285.0">
@@ -28,11 +25,6 @@
       </Label>
       <TextField fx:id="txtClientName" layoutX="23.0" layoutY="81.0" prefHeight="25.0" prefWidth="231.0" />
       <JFXButton buttonType="RAISED" layoutX="162.0" layoutY="173.0" onAction="#addClientOnAction" ripplerFill="#4ff514" style="-fx-border-color: lime;" text="Add Client">
-         <font>
-            <Font name="Lucida Console" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="23.0" layoutY="173.0" onAction="#remClientOnAction" ripplerFill="#f61111" style="-fx-border-color: red;" text="Remove">
          <font>
             <Font name="Lucida Console" size="12.0" />
          </font>
